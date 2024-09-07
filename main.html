@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Video Player</title>
-    <style>
-        :root {
-            --volume: 1;
-            --playback-speed: 1;
-        }
-
-        #video {
-            /* For demo purposes */
-        }
-
-        #controls {
-            display: flex;
-            align-items: center;
-        }
-
-        #controls button, #controls input {
-            margin: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Video Player</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="player">
-        <video id="video" width="640" controls>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div id="progress">
-            <div id="progress__filled"></div>
-        </div>
-        <div id="controls" class="controls">
-            <button id="player__button">►</button>
-            <button id="rewind">« 10s</button>
-            <button id="fastForward">25s »</button>
-            <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1" data-sizing="%">
-            <input type="number" id="playbackSpeed" name="playbackSpeed" min="0.5" max="2" step="0.1" value="1" data-sizing="x">
-        </div>
+  <div class="player">
+    <video class="viewer" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+
+    <div class="controls">
+      <button class="player__button toggle" title="Toggle Play">►</button>
+      <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1" title="Volume">
+      <input type="range" name="playbackSpeed" class="player__slider" min="0.5" max="2" step="0.1" value="1" title="Playback Speed">
+      <button data-skip="-10" class="player__button">« 10s</button>
+      <button data-skip="25" class="player__button">25s »</button>
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
     </div>
-    <script src="scripts.js"></script>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
+
 
