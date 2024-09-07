@@ -1,5 +1,5 @@
 // Select elements
-const video = document.querySelector('.viewer');
+const video = document.querySelector('.player__video');
 const toggle = document.querySelector('.toggle');
 const volumeSlider = document.querySelector('input[name="volume"]');
 const speedSlider = document.querySelector('input[name="playbackSpeed"]');
@@ -62,4 +62,5 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+
 
